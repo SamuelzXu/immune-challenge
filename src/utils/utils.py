@@ -1,6 +1,7 @@
 from cuml import UMAP, PCA, HDBSCAN, KMeans, DBSCAN
 import torch
 import cupy as cp
+import numpy as np
 from sklearn.model_selection import train_test_split
 from scipy.stats import mode as scimode
 

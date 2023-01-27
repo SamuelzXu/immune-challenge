@@ -217,3 +217,25 @@ if __name__ == '__main__':
                 break
             except AssertionError:
                 print("Train clustering failed, retrying...")
+ 
+    val_output = pd.DataFrame(columns=['gene','a_i','b_i','c_i','d_i','e_i'])
+
+    proportions = ko_deltas_results[100]
+
+    for g in valid_genes:
+        g_props = proportions[g].tolist()
+        data_g = [g] + g_props
+        row = pd.DataFrame(columns=['gene','a_i','b_i','c_i','d_i','e_i'], data=[data_g])
+        val_output = pd.concat([val_output,row])
+
+    val_output.to_csv("validation_output.csv", index=False)
+
+    test_output = pd.DataFrame(columns=['gene','a_i','b_i','c_i','d_i','e_i'])
+
+    for g in test_genes:
+        g_props = proportions[g].tolist()
+        data_g = [g] + g_props
+        row = pd.DataFrame(columns=['gene','a_i','b_i','c_i','d_i','e_i'], data=[data_g])
+        test_output = pd.concat([test_output,row])
+
+    test_output.to_csv("test_output.csv", index=False)

@@ -252,7 +252,6 @@ Shapely==1.8.0
 shellingham==1.5.0.post1
 simpervisor==0.4
 six==1.16.0
-sklearn==0.0.post2
 sniffio==1.3.0
 snowflake-connector-python==2.9.0
 sortedcontainers==2.4.0
